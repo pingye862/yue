@@ -1,0 +1,82 @@
+{
+  "Image_Info": "Panda Detection in Natural Habitats",
+  "Event": "Image analysis reveals panda instances within a set of images. Aim is to identify, categorize, and precisely locate pandas for conservation purposes.",
+  "Suspects": [
+    {
+      "Suspect_ID": "Annotator_001",
+      "Role": "Primary annotator",
+      "Details": "Responsible for initial bounding box annotation. Possible errors in bbox accuracy."
+    },
+    {
+      "Suspect_ID": "Expert_Reviewer_002",
+      "Role": "Expert reviewer",
+      "Details": "Wildlife biologist. Reviewed annotations for species confirmation and contextual accuracy. Potential for subjectivity."
+    }
+  ],
+  "Clues": [
+    {
+      "Clue_Type": "Bounding Box (BBox) Annotations",
+      "Description": "Initial BBox coordinates might contain inaccuracies due to occlusion or poor image quality.",
+      "Evidence": "BBoxes need refinement to improve object detection model training."
+    },
+    {
+      "Clue_Type": "Image Context",
+      "Description": "Environmental factors (e.g., bamboo thickets, shadows) complicate accurate panda localization.",
+      "Evidence": "Images with heavy occlusion or similar color patterns require careful review."
+    },
+    {
+      "Clue_Type": "Inconsistent labeling",
+      "Description": "Variations in labeling based on the annotator.",
+      "Evidence": "Some images label baby pandas, other ones just pandas."
+    },
+    {
+      "Clue_Type": "Misleading: Difficult images",
+      "Description": "Some of the images has no pandas at all, some are of very poor quality.",
+      "Evidence": "It might be hard to detect the pandas"
+    }
+  ],
+  "Detective’s_Actions": "Object detection model analyzed image dataset; annotations refined; discrepancies investigated. Statistical analysis of annotation data performed to validate consistency.",
+  "Truth": "Pandas successfully detected and localized in the image set. Initial annotation errors corrected. High-quality dataset prepared for model training.",
+  "Images": [
+    {
+      "image_id": "img_004",
+      "file_name": "panda_004.jpg",
+      "width": 1024,
+      "height": 768,
+      "annotations": [
+        {
+          "annotation_id": 5,
+          "category": "panda",
+          "bbox": [150, 70, 520, 620],
+          "pose": "sitting",
+          "occlusion": "partial",
+          "annotator_confidence": "high"
+        }
+      ]
+    },
+    {
+      "image_id": "img_005",
+      "file_name": "panda_005.jpg",
+      "width": 1280,
+      "height": 720,
+      "annotations": [
+        {
+          "annotation_id": 6,
+          "category": "panda",
+          "bbox": [250, 170, 610, 710],
+          "pose": "eating",
+          "occlusion": "none",
+          "annotator_confidence": "medium"
+        },
+        {
+          "annotation_id": 7,
+          "category": "panda",
+          "bbox": [850, 220, 310, 410],
+          "pose": "standing",
+          "occlusion": "minor",
+          "annotator_confidence": "high"
+        }
+      ]
+    }
+  ]
+}
